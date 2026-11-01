@@ -1,0 +1,10 @@
+@extends('layouts.app')
+@section('title', 'About')
+@section('content')
+    <div class="page-heading"><p class="eyebrow">ABOUT COUNTER POS</p><h1>Good business starts<br>with <em>good organization.</em></h1><p class="lead">Counter POS brings customer information and staff accounts into a clear, connected workspace.</p></div>
+    <div class="about-grid">
+        <section class="content-panel"><span class="card-index">OUR PURPOSE</span><h2>A foundation for the everyday.</h2><p>This application is the first step toward a point-of-sale system. It provides a landing page, an introduction to the application, and dedicated directories for customers and users.</p><p>Customer accounts show contact details and account status. User accounts show the names, usernames, roles, and status of the people who operate the system.</p><p>The current scope is browsing account information. Sales processing, login, and account editing can be introduced in later versions.</p></section>
+        <section class="content-panel"><span class="card-index">PROJECT DETAILS</span><h2>Laravel POS Foundations</h2><dl class="details-list"><div><dt>Course</dt><dd>IT0049 Web System Technologies</dd></div><div><dt>Activity</dt><dd>TFA5 &middot; From Zero to Four Pages</dd></div><div><dt>Framework</dt><dd>Laravel &amp; Blade</dd></div><div><dt>Architecture</dt><dd>Model&ndash;View&ndash;Controller</dd></div><div><dt>Current data source</dt><dd>Static PHP arrays</dd></div></dl></section>
+    </div>
+    <section class="section-space"><div class="section-top"><h2>Explore the application</h2></div><div class="feature-grid"><a class="feature-card compact" href="{{ route('home') }}"><span class="card-index">START HERE</span><h3>Home &rarr;</h3><p>A quick overview of the workspace.</p></a><a class="feature-card compact" href="{{ route('customers') }}"><span class="card-index">CUSTOMER DIRECTORY</span><h3>Customers &rarr;</h3><p>Customer profiles and contact details.</p></a><a class="feature-card compact" href="{{ route('users') }}"><span class="card-index">TEAM DIRECTORY</span><h3>Users &rarr;</h3><p>Staff accounts and assigned roles.</p></a></div></section>
+@endsection

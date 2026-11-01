@@ -1,0 +1,87 @@
+IT0049 TFA5 - COUNTER POS
+
+This is a complete Laravel source project, excluding downloaded vendor packages.
+It contains all four required pages and five sample records in each directory.
+You still need to run it, create your GitHub repository, and deploy it.
+
+LOCAL RUN - IF PHP AND COMPOSER ARE ALREADY INSTALLED
+1. Extract the ZIP. Open the laravel-pos folder.
+2. Double-click setup-windows.bat.
+3. Wait for Composer to install the dependencies.
+4. Open http://127.0.0.1:8000.
+5. Test Home, About, Customers, and Users.
+Keep the command window open while testing.
+
+If you prefer Command Prompt, open it inside this folder and run:
+  copy .env.example .env
+  composer install
+  php artisan key:generate
+  php artisan serve
+
+If you only have XAMPP, PHP needs to be on PATH and Composer must be installed.
+XAMPP Apache/MySQL do not need to be running for php artisan serve.
+PHP 8.2 or newer is required. No Node.js, npm, or MySQL setup is needed.
+
+GITHUB - UPLOAD RAW FILES, NOT THE ZIP
+1. Open https://github.com/new and create a repository named laravel-pos-tfa5.
+2. On the empty repository page, choose uploading an existing file.
+   If a README is already present, choose Add file > Upload files.
+3. Open your extracted laravel-pos folder and select its CONTENTS.
+4. Drag those files and folders into GitHub's upload box, then Commit changes.
+5. At the top of the repository you should see composer.json, artisan,
+   Dockerfile, app, routes, resources, public, bootstrap, config, and database.
+   Do not upload a surrounding laravel-pos folder as an extra level.
+6. Confirm .env.example was included. Do not upload .env or vendor.
+7. Copy the repository URL for your submission.
+
+If you ran locally first, use Git instead of dragging vendor into the browser:
+  git init
+  git add .
+  git commit -m "Add Laravel POS application"
+  git branch -M main
+  git remote add origin https://github.com/YOUR_USERNAME/laravel-pos-tfa5.git
+  git push -u origin main
+Replace YOUR_USERNAME with your actual GitHub username.
+
+HOSTING - RENDER WITH THE INCLUDED DOCKERFILE
+1. Open https://dashboard.render.com/ and sign in.
+2. Choose New > Web Service and connect your GitHub account.
+3. Select your laravel-pos-tfa5 repository.
+4. Set Language/Runtime to Docker.
+5. Keep Dockerfile Path as ./Dockerfile and Root Directory empty.
+6. Choose the Free plan if it is available in your account.
+7. Create the service and wait for the first build and deployment.
+8. Open the HTTPS onrender.com address shown by Render.
+9. Test /, /about, /customers, and /users at that public address.
+10. Copy that address as the hosted application link for submission.
+
+The Docker image includes Apache and installs PHP dependencies automatically.
+No database service is needed for the static-array pages.
+APP_ENV=production and APP_DEBUG=false are set by the Dockerfile.
+An application key is generated at startup if none was supplied.
+For a stable key, run php artisan key:generate --show locally and save that
+value as APP_KEY in the service's Environment settings.
+Hosting availability, signup verification, and build time depend on your account.
+The project has not been deployed for you.
+
+OPTIONAL DATABASE - THE ASSIGNMENT ALSO REQUESTS MIGRATION/SEEDER FILES
+Those files are already in database/migrations and database/seeders.
+The web pages intentionally keep using static arrays even after migration.
+To try the optional SQLite database from the project folder:
+  php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
+  php artisan migrate --seed
+This is optional for displaying the four required pages.
+
+BEFORE YOU SUBMIT
+[ ] The four page links work locally.
+[ ] Customers and Users each show five records.
+[ ] Your GitHub repository contains the actual project source, not only a ZIP.
+[ ] The database migration and seeder files are present.
+[ ] Your README contains your real repository and live website links.
+[ ] The hosted HTTPS link opens all four pages.
+[ ] Submit BOTH the GitHub URL and the live website URL.
+
+If the four TFA1 pages had a specific business name or design, adjust the
+Counter POS name and styles to match your earlier work.
+
+See README.md for the file structure, route map, and MVC explanation.
